@@ -1,0 +1,28 @@
+COMO OBTENER EL .JAR SIN INSTALAR JAVA EN TU PC
+
+Este proyecto incluye un flujo de GitHub Actions que compila el mod en la nube.
+No tienes que instalar Java JDK ni Gradle en tu computadora.
+
+PASOS:
+1. Entra a https://github.com/ y crea una cuenta o inicia sesión.
+2. Pulsa el signo + y elige New repository.
+3. Pon como nombre: CorazonesPorMobs
+4. Selecciona Public o Private y pulsa Create repository.
+5. En la página del repositorio, elige Add file > Upload files.
+6. Descomprime este ZIP en tu computadora y sube TODOS los archivos y carpetas que contiene,
+   incluida la carpeta oculta .github. Si el navegador no muestra .github, activa mostrar
+   archivos ocultos en Windows o crea manualmente el archivo indicado en el paso 7.
+7. Si no puedes subir la carpeta .github, crea el archivo .github/workflows/build.yml en GitHub
+   y pega el contenido del archivo build.yml incluido en esta carpeta.
+8. Pulsa Commit changes.
+9. Abre la pestaña Actions. Entra en “Compilar mod Corazones por Mobs”. Si no se inició solo,
+   pulsa Run workflow.
+10. Espera a que termine en verde. Abre la ejecución completada y baja hasta Artifacts.
+11. Descarga CorazonesPorMobs-Forge-1.20.1 y descomprime ese ZIP. Dentro estará el .jar.
+12. Copia el .jar a .minecraft/mods. Debes tener Forge 1.20.1.
+
+IMPORTANTE:
+- El proyecto está configurado para Minecraft 1.20.1 y Forge 47.4.10.
+- GitHub compila en la nube; no necesitas instalar Java JDK en tu PC.
+- La primera compilación puede tardar varios minutos.
+- El mod todavía no ha sido probado dentro del juego. Haz una copia de seguridad del mundo.
