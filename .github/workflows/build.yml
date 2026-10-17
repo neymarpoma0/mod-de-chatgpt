@@ -1,0 +1,39 @@
+
+name: Compilar CorazonesPorMobs
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: CorazonesPorMobs-Forge-1.20.1-GITHUB/CorazonesPorMobs
+
+    steps:
+      - name: Descargar archivos
+        uses: actions/checkout@v4
+
+      - name: Instalar Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Preparar Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.8'
+
+      - name: Compilar mod
+        run: gradle --no-daemon build
+
+      - name: Guardar archivo JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: CorazonesPorMobs-Forge-1.20.1
+          path: CorazonesPorMobs-Forge-1.20.1-GITHUB/CorazonesPorMobs/build/libs/*.jar
+          if-no-files-found: error
